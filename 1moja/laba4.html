@@ -1,0 +1,105 @@
+<!-- DTD для HTML5 -->
+<head>
+    <title>
+       Страница формы
+    </title>
+    <meta charset = 'utf-8'>
+    <style>
+      body {
+      background-image: url('teatr.jpg');
+      background-size: cover;
+      }
+       #form_wrap { /*обрамление формы*/
+       display: table; /*режим отображения: табличный*/
+       font-family: 'Orienta';
+       min-width:400px; /*минимальная ширина формы*/
+       margin: 0 auto; /*внешние отсутпы: по середине по горизонтали*/
+       background-color: #ecbdbd;
+       border-radius: 15px;
+       font-size: 18px;
+       padding: 2%; /* внутренние отступы*/
+       line-height:1.5;
+       text-align: center;
+       }
+       ul {
+       list-style-type: none; /*убираем маркировку итемов листа*/
+       padding : 0%; /* убираем отступ листа*/
+       text-align:left;
+       }
+       li {
+       line-height:1.5;
+       display: flex; /* режим отображения: flex*/
+       padding: 1% 0%;
+       }
+       label {
+       flex: 1; /* коэффициент растягивания*/
+       padding:1%;
+       }
+       .text_input {
+       border-style: solid;
+       flex: 2; /*коэффициент растягивания*/
+       padding:8px;
+       font-family: 'Montserrat Thin';
+       font-weight: bold;
+       border-radius: 15px;
+       font-size: 18px;
+       }
+       textarea {
+       min-height:46px; /* минимальная высота textarea элемента*/
+       height:46px;
+       border-width: 2px;
+       }
+       .opt {
+       border-style: none;
+       }
+       button:hover {
+       background-color: #1e90ff;
+       border-style: none;
+       }
+    </style>
+ </head>
+ <body>
+    <h1 style='font-family:"Righteous";text-align: center; text-transform: uppercase;'>Заказ билетов в театр</h1>
+    <form id = 'form_wrap'>
+      <form id="#">
+       <label style='font-family:"Righteous";'>Пройдите авторизацию:</label>
+       <ul>
+          <p>
+          <li><label>Логин: </label><input required class='text_input' placeholder='Введите свой логин'></li> <!-- required - обязательный для заполнения. placeholder - заглушка -->
+          <li><label>Пароль: </label><input required type='password' class='text_input' placeholder='Введите свой пароль'></li>
+          </p>
+       </ul>
+       <label style='font-family:"Righteous";'>Описание заказа:</label>
+       <ul>
+          <li><label>Комментарии</label><textarea class='text_input' placeholder= 'Если есть что добавить:)'></textarea></li>
+          <li><label>Email:</label><input type="email" class='text_input'></li>
+          <li><label>Дата:</label><input type="date" class='text_input' name="calendar" min="2022-23-02"></li>
+       </ul>
+       <p>
+          <input type="radio" name="type" value="carry" checked>Наличная оплата <!-- checked - выбранный по умолчанию -->
+          <input type="radio" name="type" value="delivery">Оплата по карте<br>
+       </p>
+       <p>
+          <input type="radio" name="whotakes" value="myself" checked> Для себя беру билет
+          <input type="radio" name="whotakes" value="another"> Для друга моего билет
+       </p>
+       <p>
+          <input type="checkbox" name="promo" id="promo" unchecked> Промокод<br>
+          <input type="checkbox" name="check" id="check" checked>Бонусные баллы<br>
+       </p>
+       <select multiple=true name="subject" size="5" class='text_input'> <!-- multiple позволяет выбирать несколько элементов. size - количество строк, которые будут отображаться -->
+          <option class='text_input opt' value="sub1">МДТ</option>
+          <option class='text_input opt' value="sub2">mdt-dodin.ru</option>
+          <option class='text_input opt' value="sub3">+78124000370</option>
+          <option class='text_input opt' value="sub4">ул. Рубинштейна, 18/5</option>
+          <option class='text_input opt' value="sub5">Достоевская 330 м</option>
+       </select>
+       <p style='display: flex;
+          justify-content: space-between;
+          height: 100%'> <!-- пространство между контентом: пустое пространство между -->
+          <button type="submit" class='text_input' style='flex: 0;'>Отправить</button> <!-- при flex 0 элемент не будет растягиваться -->
+          <button type="reset" class='text_input button' style='flex: 0;'>Стереть</button>
+       </p>
+    </form>
+   </form>
+ </body>

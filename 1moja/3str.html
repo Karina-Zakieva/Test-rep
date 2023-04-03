@@ -1,0 +1,66 @@
+<!-- DTD для HTML5 -->
+<head>
+   <!-- ЗАГОЛОВОК В ОКНЕ БРАУЗЕРА -->
+   <title>
+      Страница 3
+   </title>
+   <meta charset = 'utf-8'>
+   <style>
+      
+      table {
+      border-collapse: collapse; /* border-collapse отвечает за слияние соседних границ обводки у ячеек  */
+      table-layout: fixed; /* Фиксированный размер ячеек  */
+      }
+      th,td {
+      padding: 5px;
+      border: 2px solid rgb(40, 30, 229); /* Сплошная граница голубого цвета с толщиной 2px для ячеек */
+      font-family: Arial;
+      text-align: center;
+      line-height: 1.5;
+      }
+      .ordinaryRow { /* Высота и ширина большинства ячеек */
+      height: 1.75cm;
+      width: 5.45cm;
+      }
+	  
+      .budget {
+      background-color:#8785f0; /* Цвет ячеек для бюджета */
+      }
+	  
+      .unbudget {
+      background-color: rgb(64, 182, 64); /* Цвет ячеек вне бюджета */
+      }
+   </style>
+</head>
+<body>
+   <table> <!-- Таблица -->
+      <tr> <!-- Контейнер строки -->
+         <th colspan=3 style='padding:0px;'> <!-- Склеивание трех ячеек по горизонтали -->
+            <table>
+               <td style='border: none; border-right:2px solid blue'> <img src='111.jpg'> </th>
+               <th style ='font-size: 16pt; border: none; border-left:2px solid blue; width:13.64cm; height:2.86cm'> Вступительные испытания в магистратуру<br> ГУАП </th> <!-- Заголовочная ячейка -->
+            </table>
+         </th>
+      </tr>
+      <tr>
+         <td class='ordinaryRow budget'>Магистратура<br>(бюджет)</td> <!-- Обычная ячейка -->
+         <td class='ordinaryRow budget'> с 20 июня по<br>17 августа </td>
+         <td class='ordinaryRow budget' style='vertical-align:top;'> Очная форма обучения </td>
+      </tr>
+      <tr>
+         <td rowspan=2 class=' unbudget' style ='height: 0.56cm;width: 6cm;'>Магистратура<br>(внебюджет)</td>
+         <td class='ordinaryRow unbudget'> с 20 июня по<br> 17 августа</td>
+         <td class='ordinaryRow unbudget' style='vertical-align:top;'> Очная форма обучения </td>
+      </tr>
+      <tr>
+         <td class='ordinaryRow unbudget'>с 20 июня по<br>17 сентября</td>
+         <td class='ordinaryRow unbudget'>Заочная форма<br>обучения</td>
+      </tr>
+      <tr>
+         <td colspan = 3 style='text-align:left;height: 0.56cm;width: 16.89cm;'>
+            <div style = 'text-align:center;font-weight:bold;font-style: italic;padding-bottom:0px;'>Программы вступительных испытаний<br></div>
+            Со всеми программами вступительных испытаний в магистратуру можно<br>ознакомиться на сайте ГУАП
+         </td>
+      </tr>
+   </table>
+</body>
